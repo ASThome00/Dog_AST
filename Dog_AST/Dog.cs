@@ -6,46 +6,28 @@ using System.Threading.Tasks;
 
 namespace Dog_AST
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Dog dog = new Dog(5, "Fido");
-            Console.WriteLine(dog.getName() + " is " + dog.calcDogYears() + " years old in dog years!");
-            dog.setAge(8);
-            Console.WriteLine(dog.getAge());
-            Console.WriteLine(dog.toString());
-            System.Threading.Thread.Sleep(10000);
-        }
-    }
-    /**
-	 * This class is a converted copy of the Dog.java class written by Dr. Robert Kelley.
-	 * 
-	 * @author: Andrew Tanner
-	 * @version: 2.0
-	 */
+    /// <summary>
+    /// This class is a converted copy of the Dog.java class written by Dr. Robert Kelley.
+    /// </summary>
     class Dog
     {
         private int age;
         private String name;
         
-        /**
-         * Empty-argument constructor to put object
-         * into a consistent state.
-         */
+        /// <summary>
+        /// Empty argument constructor
+        /// </summary>
         public Dog()
         {
             age = 0;
             name = "";
         }//end constructor
 
-        /**
-         * Constructor accepts the age and
-         * name of the dog. This is the preferred
-         * constructor.
-         * @param age
-         * @param name
-         */
+        /// <summary>
+        /// Preferred constructor for Dog
+        /// </summary>
+        /// <param name="age">Age</param>
+        /// <param name="name">Name</param>
         public Dog(int age, String name)
         {
 
@@ -53,27 +35,29 @@ namespace Dog_AST
             this.setName(name);
 
         }//end constructor
-
+        /// <summary>
+        /// Calculates the age of the dog in dog years
+        /// </summary>
+        /// <returns>age in dog years</returns>
         public int calcDogYears()
         {
             int dogYears = 15 + (this.age - 1) * 7;
             return dogYears;
         }
 
-        /**
-         * Getter for age
-         * @return
-         */
+        /// <summary>
+        /// getter for age
+        /// </summary>
+        /// <returns>age</returns>
         public int getAge()
         {
             return age;
         }//end getAge
 
-        /**
-         * Setter for age
-         * Checks the bounds so 
-         * @param age
-         */
+        /// <summary>
+        /// setter for age, checks to make sure age is 0 or greater.
+        /// </summary>
+        /// <param name="age">age</param>
         public void setAge(int age)
         {
             if (age < 0)
@@ -82,20 +66,19 @@ namespace Dog_AST
                 this.age = age;
         }//end setAge
 
-        /**
-         * Getter for name
-         * @return
-         */
+        /// <summary>
+        /// getter for name
+        /// </summary>
+        /// <returns>name</returns>
         public String getName()
         {
             return name;
         }//end getName
 
-        /**
-         * Setter for name. Ensures that only
-         * alpha characters are allowed in the name.
-         * @param name
-         */
+        /// <summary>
+        /// Setter for name, makes sure only letters are allowed in the name
+        /// </summary>
+        /// <param name="name">Name</param>
         public void setName(String name)
         {
             bool valid = true;
